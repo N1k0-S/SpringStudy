@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.wcx.pojo.Address">
+        <property name="address" value="BeiJing DongCheng District"/>
+    </bean>
+
+    <bean id="student" class="com.wcx.pojo.Student">
+
+        <!-- 第一种：普通值注入，直接使用Value -->
+        <property name="name" value="Niko"/>
+
+        <!-- 第二种：ref-->
+        <property name="address" ref="address"/>
+
+        <!-- 第三种：数组-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>水浒传</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+
+        <!-- 第四种：List-->
+        <property name="hobby">
+            <list>
+                <value>听歌</value>
+                <value>看电影</value>
+                <value>打篮球</value>
+            </list>
+        </property>
+
+        <!-- 第五种：Map，以键值对的形式存储数据-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="123456789"/>
+                <entry key="护照号" value="987654321"/>
+            </map>
+        </property>
+
+        <!-- 第六种：set-->
+        <property name="game">
+            <set>
+               <value>LOL</value>
+               <value>CS:GO</value>
+            </set>
+        </property>
+
+        <!-- 第七种：null-->
+        <property name="wife">
+            <null/>
+        </property>
+
+        <!-- 第八种：properties-->
+        <property name="info">
+            <props>
+                <prop key="idNo">20190525</prop>
+                <prop key="sex">male</prop>
+            </props>
+        </property>
+    </bean>
+</beans>
