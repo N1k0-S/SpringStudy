@@ -1,5 +1,7 @@
 import com.wcx.pojo.Address;
 import com.wcx.pojo.Student;
+import com.wcx.pojo.User;
+import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -37,5 +39,16 @@ public class MyTest {
          *              }
          *        }
          */
+    }
+
+    @Test
+    public void test2(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("userbeans.xml");
+
+        User user = context.getBean("user",User.class);
+        User user2 = context.getBean("user2",User.class);
+
+        System.out.println(user);
+        System.out.println(user2);
     }
 }
