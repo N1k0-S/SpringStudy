@@ -40,5 +40,27 @@
     如果@Autowired不能唯一自动装配，需要配合
     @Nullable
     @Qualifier(Value = xxx)
+    
+- @Component：组件，放在类上，这个类被Spring管理，相当于
+              <bean id="user" class="com.wcx.pojo.User"/>
 
 - @Resource ：自动装配，通过名字、类型
+
+## 使用注解开发
+- 在Spring4之后，要使用注解开发，必须保证AOP的包已经导入
+- 使用之前导入context约束和注解支持
+
+### 1. bean
+@Component 相当于bean标签
+### 2. 属性如何注入
+@Value 相当于property标签
+### 3. 衍生的注解
+添加如下注解，表示被Spring托管，与@Component一样
+- dao [@Repository]
+- service [@Service]
+- controller [@Controller]
+
+## 使用Java的方式配置Spring
+不使用xml配置Spring
+JavaConfig是Spring的一个子项目
+
