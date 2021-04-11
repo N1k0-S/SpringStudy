@@ -64,3 +64,18 @@
 不使用xml配置Spring
 JavaConfig是Spring的一个子项目
 
+- @Configuration  
+
+  用于代替xml配置Spring，注解本身也会被Spring托管，注册到容器中
+
+  ```java
+  @Documented
+  @Component
+  public @interface Configuration {
+      @AliasFor(
+          annotation = Component.class
+      )
+  ```
+
+  
+
